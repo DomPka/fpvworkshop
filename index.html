@@ -13,14 +13,39 @@
   <meta property="og:image" content="assets/AD-01.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- External stylesheet with background + custom components -->
-  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    /* Registracija (glow) */
+    .btn-primary-container{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.5rem}
+    .btn-primary-container div{position:absolute;inset:0;opacity:.6;border-radius:.75rem;filter:blur(12px);background:linear-gradient(to right,#6366f1,#ec4899,#facc15);transition:all .2s}
+    .btn-primary-container:hover div{opacity:1;transition-duration:.2s}
+    .btn-primary-link{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:.9rem 2.2rem;border-radius:.75rem;font-weight:700;color:#fff;background:#111827;transition:all .2s}
+    .btn-primary-link:hover{background:#1f2937;transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+    
+    /* Uiverse buttons */
+    .button{position:relative;overflow:hidden;height:3rem;padding:0 2rem;border-radius:1.5rem;background:#3d3a4e;background-size:400%;color:#fff;border:none;cursor:pointer}
+    .button:hover::before{transform:scaleX(1)}
+    .button-content{position:relative;z-index:1}
+    .button::before{content:"";position:absolute;top:0;left:0;transform:scaleX(0);transform-origin:0 50%;width:100%;height:inherit;border-radius:inherit;background:linear-gradient(82.3deg,rgba(150,93,233,1) 10.8%,rgba(99,88,238,1) 94.3%);transition:all .475s}
+
+    /* Badge card */
+    .card{width:190px;height:254px;background:#171717;display:flex;justify-content:center;align-items:center;overflow:hidden;position:relative;box-shadow:0 0 3px 1px #0008;cursor:pointer;margin:auto}
+    .card .content{border-radius:5px;background:#171717;width:186px;height:250px;z-index:1;padding:20px;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+    .card .content img{max-width:100%;max-height:120px;margin-bottom:1rem}
+    .content::before{opacity:0;transition:opacity 300ms;content:" ";display:block;background:#fff;width:5px;height:50px;position:absolute;filter:blur(50px);overflow:hidden}
+    .card:hover .content::before{opacity:1}
+    .card::before{opacity:.6;content:" ";position:absolute;display:block;width:80px;height:360px;background:linear-gradient(#ff2288,#387ef0);transition:opacity 300ms;animation:rotation_9018 8000ms infinite linear;animation-play-state:running}
+    .card:hover::before{opacity:1}
+    .card::after{position:absolute;content:" ";display:block;width:250px;height:360px;background:#17171733;backdrop-filter:blur(50px)}
+    @keyframes rotation_9018{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+  </style>
 </head>
 <body class="relative min-h-screen text-slate-800">
-  <!-- Animated background -->
-  <div class="rain-bg fixed inset-0 -z-10"></div>
+  <!-- Background IMAGE (works everywhere) -->
+  <div class="absolute inset-0 -z-10">
+    <img src="assets/AD-01.png" alt="Dirbtuvės" class="h-full w-full object-cover blur-sm" />
+  </div>
 
-  <!-- Header (centered logos) -->
+  <!-- Header -->
   <header class="sticky top-0 z-30 border-b bg-white/90 backdrop-blur">
     <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-center gap-10">
       <img src="assets/vilniustech-logo.png" alt="VILNIUS TECH" class="h-12 w-auto" />
@@ -31,17 +56,12 @@
   <!-- Hero -->
   <section class="relative overflow-hidden text-center">
     <div class="mx-auto max-w-4xl px-4 py-16 sm:py-20 bg-white/70 rounded-3xl shadow">
-      <h1 class="text-4xl sm:text-5xl font-extrabold">
-        Lenktyninių dronų dirbtuvės 2025
-      </h1>
-      <p class="mt-6 text-lg sm:text-xl">
-        Prisijunk prie pirmojo AGAI istorijoje FPV dronų workshop'o ir tapk dalimi lenktynių revoliucijos!
-      </p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold">Lenktyninių dronų dirbtuvės 2025</h1>
+      <p class="mt-6 text-lg sm:text-xl">Prisijunk prie pirmojo AGAI istorijoje FPV dronų workshop'o ir tapk dalimi lenktynių revoliucijos!</p>
       <div class="mt-8 flex flex-col items-center gap-4">
         <div class="btn-primary-container">
           <div></div>
-          <a href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener" class="btn-primary-link">
-            Registracija
+          <a href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener" class="btn-primary-link">Registracija
             <svg aria-hidden="true" viewBox="0 0 10 10" height="12" width="12" fill="none" class="mt-0.5 ml-2 -mr-1 stroke-white stroke-2">
               <path d="M0 5h7" class="transition opacity-0 group-hover:opacity-100"></path>
               <path d="M1 1l4 4-4 4" class="transition group-hover:translate-x-[3px]"></path>
@@ -70,21 +90,12 @@
         <li>Gebėjimo dirbti komandose</li>
         <li>Atsakomybės už savo veiksmus</li>
       </ul>
-      <p class="mt-6 text-lg text-left">
-        Taigi, jaunas inžinieriau, ko tu lauki? Greičiau prisiregistruok ir būk atrinktas į talentingų inžinierių ratą! Vietų skaičius ribotas!
-      </p>
-      <p class="mt-4 italic text-left">
-        P.S. Dalis suteikiamos patekusiems į laisvą vietą. Jei nespėjai — gali pats įsigyti dalių asmeniškai ir vistiek prisijungti prie workshop'o.
-      </p>
+      <p class="mt-6 text-lg text-left">Taigi, jaunas inžinieriau, ko tu lauki? Greičiau prisiregistruok ir būk atrinktas į talentingų inžinierių ratą! Vietų skaičius ribotas!</p>
+      <p class="mt-4 italic text-left">P.S. Dalis suteikiamos patekusiems į laisvą vietą. Jei nespėjai — gali pats įsigyti dalių asmeniškai ir vistiek prisijungti prie workshop'o.</p>
 
-      <!-- Buttons row (centered, same line) -->
       <div class="mt-8 flex justify-center gap-6">
-        <a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" rel="noopener" class="button">
-          <span class="button-content">Rekomenduojamų dalių sąrašas</span>
-        </a>
-        <a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" rel="noopener" class="button">
-          <span class="button-content">Detalus aprašymas</span>
-        </a>
+        <a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" rel="noopener" class="button"><span class="button-content">Rekomenduojamų dalių sąrašas</span></a>
+        <a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" rel="noopener" class="button"><span class="button-content">Detalus aprašymas</span></a>
       </div>
     </div>
   </section>
@@ -93,9 +104,7 @@
   <section class="mx-auto max-w-5xl px-4 pb-14">
     <div class="bg-white/70 rounded-3xl p-8 shadow">
       <h2 class="text-2xl font-semibold text-center">Skaitmeninis ženkliukas</h2>
-      <p class="mt-2 text-center text-slate-700">
-        Dalyviams bus suteiktas <strong>„RACING DRONES“</strong> skaitmeninis ženkliukas.
-      </p>
+      <p class="mt-2 text-center text-slate-700">Dalyviams bus suteiktas <strong>„RACING DRONES“</strong> skaitmeninis ženkliukas.</p>
       <div class="mt-6 flex justify-center">
         <div class="card">
           <div class="content">
@@ -107,7 +116,7 @@
     </div>
   </section>
 
-  <!-- Footer (simple links) -->
+  <!-- Footer -->
   <footer class="border-t bg-white/80">
     <div class="mx-auto max-w-6xl px-4 py-10 grid gap-6 sm:grid-cols-3">
       <div>
@@ -126,9 +135,7 @@
       <div>
         <p class="font-semibold">Bendrinimas</p>
         <p class="mt-2">Nukopijuok nuorodą ir dalinkis Instagram bio / Stories.</p>
-        <div class="mt-3">
-          <button id="copyLink" class="underline">Kopijuoti nuorodą</button>
-        </div>
+        <div class="mt-3"><button id="copyLink" class="underline">Kopijuoti nuorodą</button></div>
       </div>
     </div>
     <div class="text-center text-xs text-slate-500 pb-6">© <span id="year"></span> VILNIUS TECH • FPV dirbtuvės</div>
@@ -137,12 +144,8 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('copyLink').addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        alert('Nuoroda nukopijuota!');
-      } catch (e) {
-        alert('Nepavyko nukopijuoti. Nukopijuok adresą rankiniu būdu.');
-      }
+      try { await navigator.clipboard.writeText(window.location.href); alert('Nuoroda nukopijuota!'); }
+      catch (e) { alert('Nepavyko nukopijuoti. Nukopijuok adresą rankiniu būdu.'); }
     });
   </script>
 </body>
