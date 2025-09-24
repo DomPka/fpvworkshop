@@ -100,39 +100,46 @@
     </div>
   </section>
   <!-- Footer -->
-  <footer class="border-t bg-white/80">
-    <div class=\"mx-auto max-w-6xl px-4 py-10 grid gap-6 sm:grid-cols-[2fr_1fr_1.5fr_0.7fr]\">
-      <div>
-        <p class="font-semibold">Kontaktai</p>
-        <p class="mt-2">Dominykas Petrulaitis</p>
-        <p>el. paštas: <a href="mailto:dominykas.petrulaitis@vilniustech.lt" class="underline">dominykas.petrulaitis@vilniustech.lt</a></p>
-      </div>
-      <div>
-        <p class="font-semibold">Naudingos nuorodos</p>
-        <ul class="mt-2 space-y-1">
-          <li><a href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" class="underline">Registracija</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" class="underline">Rekomenduojamos dalys</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" class="underline">Programa</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold">Ženkliukas</p>
-        <p class="mt-2 text-sm text-slate-700">Dalyviams suteikiamas <strong>„RACING DRONES“</strong> skaitmeninis ženkliukas.</p>
-        <p class="mt-2"><a href="https://www.badgecraft.eu/lt/projects/15968/classes/86759?project=15968" target="_blank" rel="noopener" class="underline"><em>Peržiūrėti ženkliuką Badgecraft</em></a></p>
-      </div>
-      <div>
-        <img src="assets/badge.jpg" alt="RACING DRONES ženkliukas" class="w-28 h-auto rounded shadow mx-auto" />
-      </div>
+<footer class="border-t bg-white/80">
+  <div class="mx-auto max-w-6xl px-4 py-10 grid gap-6 sm:grid-cols-4">
+    <div class="sm:col-span-2">
+      <p class="font-semibold">Kontaktai</p>
+      <p class="mt-2">Dominykas Petrulaitis</p>
+      <p>
+        el. paštas:
+        <a href="mailto:dominykas.petrulaitis@vilniustech.lt" class="underline">
+          dominykas.petrulaitis@vilniustech.lt
+        </a>
+      </p>
     </div>
-    <div class="text-center text-xs text-slate-500 pb-6">© <span id="year"></span> VILNIUS TECH • FPV dirbtuvės</div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('copyLink').addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(window.location.href); alert('Nuoroda nukopijuota!'); }
-      catch (e) { alert('Nepavyko nukopijuoti. Nukopijuok adresą rankiniu būdu.'); }
-    });
-  </script>
+    <div>
+      <p class="font-semibold">Naudingos nuorodos</p>
+      <ul class="mt-2 space-y-1">
+        <li><a href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" class="underline">Registracija</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" class="underline">Rekomenduojamos dalys</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" class="underline">Programa</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold">Ženkliukas</p>
+      <p class="mt-2 text-sm text-slate-700">
+        Dalyviams suteikiamas <strong>„RACING DRONES“</strong> skaitmeninis ženkliukas.
+      </p>
+      <p class="mt-2">
+        <a href="https://www.badgecraft.eu/lt/projects/15968/classes/86759?project=15968"
+           target="_blank" rel="noopener" class="underline">
+          <em>Peržiūrėti ženkliuką Badgecraft</em>
+        </a>
+      </p>
+    </div>
+    <div class="flex items-start justify-center">
+      <img src="assets/badge.jpg" alt="RACING DRONES ženkliukas"
+           class="w-24 h-auto rounded shadow" />
+    </div>
+  </div>
+  <div class="text-center text-xs text-slate-500 pb-6">
+    © <span id="year"></span> VILNIUS TECH • FPV dirbtuvės
+  </div>
+</footer>
 </body>
 </html>
