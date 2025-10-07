@@ -5,6 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lenktyninių dronų dirbtuvės 2025 — Vilnius Tech</title>
   <meta name="description" content="Prisijunk prie lenktyninių dronų dirbtuvių ir pagerink savo inžinerines žinias!" />
+  <!-- ===== POPUP: Registracija baigėsi ===== -->
+<div id="regModal" class="fixed inset-0 z-[60]">
+  <!-- backdrop -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- modal content -->
+  <div class="relative mx-auto mt-20 w-[92%] max-w-2xl rounded-3xl bg-white shadow-2xl">
+    <!-- close button -->
+    <button id="regModalClose"
+      class="absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/10 text-slate-800 hover:bg-black/20 focus:outline-none"
+      aria-label="Uždaryti">
+      <span class="text-2xl leading-none">&times;</span>
+    </button>
+
+    <div class="px-8 py-10 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-6">
+        AČIŪ visiems užsiregistravusiems!
+      </h2>
+
+      <p class="text-lg sm:text-xl font-medium text-slate-700 leading-relaxed">
+        Džiaugiamės sulaukę dvigubai daugiau motyvacinių laiškų, nei mūsų maksimalus galimas priėmimo skaičius.  
+        Su visais užsiregistravusiais dalyviais susisieksime asmeniškai.
+      </p>
+
+      <div class="mt-8">
+        <button id="enterSite"
+          class="px-6 py-3 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800">
+          Eiti į puslapį
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const modal = document.getElementById('regModal');
+  const closeBtn = document.getElementById('regModalClose');
+  const enterBtn = document.getElementById('enterSite');
+
+  function hideModal() {
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  closeBtn.addEventListener('click', hideModal);
+  enterBtn.addEventListener('click', hideModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideModal(); });
+
+  // prevent scrolling behind popup
+  document.body.classList.add('overflow-hidden');
+})();
+</script>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Lenktyninių dronų dirbtuvės 2025 — Vilnius Tech" />
