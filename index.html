@@ -68,6 +68,21 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+      html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+body > div.bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+}
+
     /* Registracija (glow) */
     .btn-primary-container{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.5rem}
     .btn-primary-container div{position:absolute;inset:0;opacity:.6;border-radius:.75rem;filter:blur(12px);background:linear-gradient(to right,#6366f1,#ec4899,#facc15);transition:all .2s}
@@ -94,10 +109,11 @@
   </style>
 </head>
 <body class="relative min-h-screen text-slate-800">
-  <!-- Background IMAGE (works everywhere) -->
-  <div class="absolute inset-0 -z-10">
-    <img src="assets/backdrop.png" alt="Dirbtuvės" class="h-full w-full object-cover blur-sm" />
-  </div>
+<!-- Background IMAGE (fixed full screen) -->
+<div class="bg-fixed">
+  <img src="assets/backdrop.png" alt="Dirbtuvės" class="h-full w-full object-cover blur-sm" />
+</div>
+
 
   <!-- Header -->
   <header class="sticky top-0 z-30 border-b bg-white/90 backdrop-blur">
