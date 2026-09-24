@@ -186,6 +186,21 @@
     return glyph;
   }
 
+  // YouTube grotuvas įkeliamas tik paspaudus – iki tol rodomas viršelis.
+  function embedYouTube(frame, id, title, start) {
+    const params = new URLSearchParams({ autoplay: '1', rel: '0', playsinline: '1' });
+    if (start) params.set('start', String(start));
+    const iframe = h('iframe', {
+      src: `https://www.youtube-nocookie.com/embed/${id}?${params}`,
+      title,
+      allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+      referrerpolicy: 'strict-origin-when-cross-origin',
+      allowfullscreen: true,
+    });
+    frame.replaceChildren(iframe);
+    iframe.focus();
+  }
+
   function videoCard(video) {
     const id = youTubeId(video.youtube);
     const title = video.title || 'Vaizdo įrašas';
@@ -193,43 +208,85 @@
     const card = isLink
       ? h('a', { class: 'video-card', href: video.url, target: '_blank', rel: 'noopener' })
       : h('article', { class: 'video-card' });
+    if (video.vertical) card.classList.add('video-card--vertical');
     const frame = h('div', { class: 'video-card__frame' });
 
     if (id) {
       const button = h('button', { type: 'button', class: 'video-card__play', 'aria-label': 'Paleisti: ' + title }, [playGlyph()]);
-      button.addEventListener('click', () => {
-        const iframe = h('iframe', {
-          src: `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`,
-          title,
-          allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-          referrerpolicy: 'strict-origin-when-cross-origin',
-          allowfullscreen: true,
-        });
-        frame.replaceChildren(iframe);
-        iframe.focus();
-      });
+      button.addEventListener('click', () => embedYouTube(frame, id, title));
       const thumb = h('img', { src: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, alt: '', loading: 'lazy', decoding: 'async' });
       thumb.addEventListener('error', () => thumb.remove());
       frame.append(thumb, button);
     } else if (video.src) {
       const player = h('video', { controls: true, preload: 'metadata', playsinline: true, poster: video.poster });
-      player.append(h('source', { src: video.src }));
+      player.append(h('source', { src: video.src, type: 'video/mp4' }));
+      player.addEventListener('loadedmetadata', () => {
+        card.classList.toggle('video-card--vertical', player.videoHeight > player.videoWidth);
+      });
       frame.append(player);
     } else if (isLink) {
       if (video.poster) frame.append(h('img', { src: video.poster, alt: '', loading: 'lazy', decoding: 'async' }));
       frame.append(h('span', { class: 'video-card__play', 'aria-hidden': 'true' }, [playGlyph()]));
     }
 
-    const meta = h('div', { class: 'video-card__meta' }, [h('h3', {}, [title])]);
-    if (video.description) meta.append(h('p', {}, [video.description]));
-    card.append(frame, meta);
+    card.append(frame);
+    if (!video.featured) {
+      const meta = h('div', { class: 'video-card__meta' }, [h('h3', {}, [title])]);
+      if (video.description) meta.append(h('p', {}, [video.description]));
+      card.append(meta);
+    }
     return card;
+  }
+
+  function featuredVideo(video) {
+    const text = h('div', { class: 'video-feature__text' }, [
+      h('h3', {}, [video.title || 'Vaizdo įrašas']),
+    ]);
+    if (video.description) text.append(h('p', {}, [video.description]));
+    const register = h('a', { class: 'btn btn--filled', href: media.registrationUrl || '#', target: '_blank', rel: 'noopener', 'data-register-link': true }, ['Registracija']);
+    const upload = h('a', { class: 'btn btn--gray', href: '#ikelk' }, ['Įkelti savo įrašą']);
+    text.append(h('div', { class: 'actions' }, [register, upload]));
+    return h('div', { class: 'video-feature' }, [videoCard(video), text]);
   }
 
   const videos = (media.videos || []).filter((v) => v && (v.youtube || v.src || v.url));
   const videoRoot = document.querySelector('[data-video-root]');
   if (videoRoot && videos.length) {
-    videoRoot.replaceChildren(h('div', { class: 'video-grid' }, videos.map(videoCard)));
+    const featured = videos.filter((v) => v.featured);
+    const rest = videos.filter((v) => !v.featured);
+    const blocks = featured.map(featuredVideo);
+    if (rest.length) blocks.push(h('div', { class: 'video-grid' }, rest.map(videoCard)));
+    videoRoot.replaceChildren(...blocks);
+  }
+
+  // Statiniai YouTube viršeliai (pvz. skraidančios eglės skiltyje).
+  document.querySelectorAll('[data-yt]').forEach((frame) => {
+    const id = frame.getAttribute('data-yt');
+    const start = frame.getAttribute('data-yt-start');
+    const link = frame.querySelector('.video-card__play');
+    const title = link ? link.getAttribute('aria-label') : 'YouTube vaizdo įrašas';
+    const poster = frame.querySelector('img');
+    if (poster && frame.hasAttribute('data-yt-fallback-thumb')) {
+      poster.addEventListener('error', () => {
+        const fallback = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+        if (poster.src !== fallback) poster.src = fallback;
+        else poster.remove();
+      });
+    }
+    if (link) {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        embedYouTube(frame, id, title, start);
+      });
+    }
+  });
+
+  /* ---------- Registracija ---------- */
+
+  if (media.registrationUrl) {
+    document.querySelectorAll('[data-register-link]').forEach((link) => {
+      link.href = media.registrationUrl;
+    });
   }
 
   /* ---------- Nuotraukos ir peržiūra ---------- */

@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Lenktyninių dronų dirbtuvės 2026 — VILNIUS TECH</title>
+  <title>Lenktyninių dronų dirbtuvės 2026 – VILNIUS TECH</title>
   <meta name="description" content="Lenktyninių dronų dirbtuvės 2026 VILNIUS TECH AGAI Aeronautikos laboratorijoje: surink FPV droną, išmok pilotuoti ir dalyvauk AGAI lenktynėse." />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#000000" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lenktyninių dronų dirbtuvės 2026 — VILNIUS TECH" />
+  <meta property="og:title" content="Lenktyninių dronų dirbtuvės 2026 – VILNIUS TECH" />
   <meta property="og:description" content="Surink FPV droną, išmok pilotuoti ir dalyvauk AGAI lenktynėse! Vietų skaičius ribotas." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/backdrop.png" />
+  <meta property="og:image" content="assets/hangar.jpg" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/media.js" defer></script>
   <script src="assets/site.js" defer></script>
+  <script src="assets/race.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#turinys">Pereiti prie turinio</a>
@@ -83,21 +84,18 @@
            target="_blank" rel="noopener" aria-label="VILNIUS TECH Aeronautikos laboratorija">
           <img class="nav__logo" src="assets/vilniustech-logo.png" alt="VILNIUS TECH" width="2967" height="1113" />
         </a>
-        <span class="nav__divider" aria-hidden="true"></span>
-        <a href="https://1dronas.lt" target="_blank" rel="noopener" aria-label="Rėmėjas 1dronas.lt">
-          <img class="nav__logo nav__logo--sponsor" src="assets/sponsor-logo.png" alt="1dronas.lt" width="1600" height="428" />
-        </a>
       </div>
       <nav class="nav__menu" aria-label="Pagrindinė navigacija">
         <ul class="nav__links">
           <li><a href="#apie">Apie</a></li>
+          <li><a href="#trasa">Trasa</a></li>
           <li><a href="#video">Vaizdo įrašai</a></li>
           <li><a href="#nuotraukos">Nuotraukos</a></li>
           <li><a href="#ikelk">Įkelk</a></li>
           <li><a href="#egle">Skraidanti eglė</a></li>
         </ul>
       </nav>
-      <a class="btn btn--filled btn--small nav__cta" href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener">Registracija</a>
+      <a class="btn btn--filled btn--small nav__cta" href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener" data-register-link>Registracija</a>
     </div>
   </header>
 
@@ -110,8 +108,8 @@
         <h1 class="hero__title" id="hero-title">Lenktyninių dronų dirbtuvės <span class="hero__year">2026</span></h1>
         <p class="hero__lead">Prisijunk prie lenktyninių dronų dirbtuvių ir pagerink savo inžinerines žinias!</p>
         <div class="hero__actions">
-          <a class="btn btn--filled" href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener">Registracija</a>
-          <a class="link-more" href="#apie">Sužinok daugiau</a>
+          <a class="btn btn--filled" href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener" data-register-link>Registracija</a>
+          <a class="link-more" href="#video">Žiūrėti vaizdo įrašą</a>
         </div>
       </div>
       <div class="hero__stage" aria-hidden="true">
@@ -125,8 +123,8 @@
       <div class="container">
         <header class="section__head">
           <p class="eyebrow">Apie dirbtuves</p>
-          <h2 class="section__title" id="apie-title">Nuo teorijos — į orą.</h2>
-          <p class="section__lead">Atsibodo skaityti tik knygas ir mokytis teoriją? Nori pritaikyti įgūdžius praktiškai ir sukurti kažką nuostabaus? Lenktyninių dronų dirbtuvės 2026 — tau!</p>
+          <h2 class="section__title" id="apie-title">Nuo teorijos – į orą.</h2>
+          <p class="section__lead">Atsibodo skaityti tik knygas ir mokytis teoriją? Nori pritaikyti įgūdžius praktiškai ir sukurti kažką nuostabaus? Lenktyninių dronų dirbtuvės 2026 – tau!</p>
         </header>
 
         <div class="features">
@@ -159,11 +157,11 @@
           <div class="expect">
             <h3>Iš tavęs tikimės</h3>
             <ul class="list-group">
-              <li><span class="check" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>Stipraus noro dirbti ir mokytis — mes parūpinsime dalis ir žinias</li>
+              <li><span class="check" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>Stipraus noro dirbti ir mokytis – mes parūpinsime dalis ir žinias</li>
               <li><span class="check" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>Gebėjimo dirbti komandose</li>
               <li><span class="check" aria-hidden="true"><svg class="icon"><use href="#i-check" /></svg></span>Atsakomybės už savo veiksmus</li>
             </ul>
-            <p class="note"><svg class="icon" aria-hidden="true"><use href="#i-info" /></svg><span><strong>P.S.</strong> Dronų rinkiniams studentai bus pasirinkti burtų keliu. Jei nori tikrai dalyvauti — įsigyk savo detales ir prisijunk prie dirbtuvių!</span></p>
+            <p class="note"><svg class="icon" aria-hidden="true"><use href="#i-info" /></svg><span><strong>P.S.</strong> Dronų rinkiniams studentai bus pasirinkti burtų keliu. Jei nori tikrai dalyvauti – įsigyk savo detales ir prisijunk prie dirbtuvių!</span></p>
           </div>
         </div>
 
@@ -174,13 +172,33 @@
       </div>
     </section>
 
+    <!-- Lenktynių trasa -->
+    <section class="section race" id="trasa" data-nav-theme="dark" aria-labelledby="trasa-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Savaitinės AGAI lenktynės</p>
+          <h2 class="section__title" id="trasa-title">Pro vartus – visu greičiu.</h2>
+          <p class="section__lead">LED žiedų vartai, kopėčios ir staigūs posūkiai. Pažiūrėk į trasą iš šono arba piloto akimis – pro FPV akinius.</p>
+        </header>
+        <div class="race-stage" data-race-stage>
+          <canvas data-race role="img" aria-label="Animacija: keturi FPV whoop dronai lenktyniauja trasoje ir skrenda pro šviečiančius LED vartus"></canvas>
+        </div>
+        <div class="race-controls">
+          <div class="segmented" role="group" aria-label="Kameros vaizdas">
+            <button type="button" data-race-mode="overview" aria-pressed="true">Trasa</button>
+            <button type="button" data-race-mode="fpv" aria-pressed="false">FPV vaizdas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Vaizdo įrašai -->
     <section class="section section--alt" id="video" aria-labelledby="video-title">
       <div class="container">
         <header class="section__head">
           <p class="eyebrow">Vaizdo įrašai</p>
           <h2 class="section__title" id="video-title">Akimirkos iš 2025 m. dirbtuvių</h2>
-          <p class="section__lead">Nuo pirmųjų surinkimo žingsnių iki savaitinių AGAI lenktynių — pažiūrėk, kaip viskas vyko praėjusiais metais.</p>
+          <p class="section__lead">Nuo pirmųjų surinkimo žingsnių iki savaitinių AGAI lenktynių – pažiūrėk, kaip viskas vyko praėjusiais metais.</p>
         </header>
         <div data-video-root>
           <div class="empty">
@@ -205,7 +223,7 @@
           <div class="empty">
             <span class="app-icon" style="--c1:#70d7ff;--c2:#0a7ea4" aria-hidden="true"><svg class="icon"><use href="#i-photo" /></svg></span>
             <h3>Galerija laukia tavo kadrų</h3>
-            <p>Įkelk savo dirbtuvių nuotraukas — atrinktas paskelbsime šioje galerijoje.</p>
+            <p>Įkelk savo dirbtuvių nuotraukas – atrinktas paskelbsime šioje galerijoje.</p>
             <a class="btn btn--filled" href="#ikelk"><svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg>Įkelti nuotraukas</a>
           </div>
         </div>
@@ -228,7 +246,7 @@
             <ol class="steps">
               <li>Nuskenuok QR kodą telefono kamera.</li>
               <li>Įkelk nuotraukas ar vaizdo įrašus.</li>
-              <li>Nurodyk savo vardą — paminėsime autorių.</li>
+              <li>Nurodyk savo vardą – paminėsime autorių.</li>
             </ol>
             <div class="actions">
               <a class="btn btn--filled" href="ikelk.html" data-upload-link><svg class="icon" aria-hidden="true"><use href="#i-upload" /></svg><span data-upload-label>Įkelti dabar</span></a>
@@ -247,13 +265,13 @@
         <header class="section__head">
           <p class="eyebrow">Kalėdos 2025 · AGAI Aeronautikos laboratorija</p>
           <h2 class="section__title" id="egle-title">Skraidanti VILNIUS TECH eglė</h2>
-          <p class="section__lead">Šventes VILNIUS TECH pasitiko žaismingai — sveikinimus į dangų pakėlė skraidanti eglė.</p>
+          <p class="section__lead">Šventes VILNIUS TECH pasitiko žaismingai – sveikinimus į dangų pakėlė skraidanti Kalėdų eglė.</p>
         </header>
 
         <div class="xmas__grid">
           <div class="tree-stage">
             <svg class="tree" viewBox="0 0 320 400" role="img" aria-labelledby="tree-title">
-              <title id="tree-title">Iliustracija: skraidanti eglė su keturiais varikliais ir sveikinimo juosta</title>
+              <title id="tree-title">Iliustracija: skraidanti eglė su aliuminio rėmu, paslėptais propeleriais ir sveikinimo juosta</title>
               <defs>
                 <radialGradient id="star-glow">
                   <stop offset="0" stop-color="#ffd60a" stop-opacity=".85" />
@@ -270,9 +288,14 @@
               </defs>
               <g class="tree__craft">
                 <g class="tree__banner">
-                  <path d="M140 328 116 356M180 328 204 356" stroke="#d2d2d7" stroke-width="1.5" fill="none" />
+                  <path d="M150 314 118 356M170 314 202 356" stroke="#d2d2d7" stroke-width="1.5" fill="none" />
                   <rect x="82" y="354" width="156" height="36" rx="10" fill="#ff3b30" />
                   <text x="160" y="378" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">Su šventėmis!</text>
+                </g>
+
+                <!-- Oro srautas iš po eglės: propeleriai paslėpti putplasčio formoje -->
+                <g class="downwash" fill="none" stroke="rgba(210,230,255,.35)" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 9">
+                  <path d="M88 304v34M98 304v28M222 304v34M232 304v28M122 306v22M198 306v22" />
                 </g>
 
                 <circle class="tree__halo" cx="160" cy="44" r="40" fill="url(#star-glow)" />
@@ -303,39 +326,13 @@
 
                 <path class="tree__star" d="M160 23 165.3 36.7 180 37.5 168.6 46.8 172.3 61 160 53 147.7 61 151.4 46.8 140 37.5 154.7 36.7Z" fill="#ffd60a" />
 
-                <rect x="148" y="296" width="24" height="14" rx="2" fill="#7a4a22" />
-
-                <!-- Galinė variklių pora -->
-                <rect x="60" y="310" width="200" height="6" rx="3" fill="#3a3a3c" />
-                <rect x="64" y="303" width="12" height="9" rx="2" fill="#48484a" />
-                <rect x="244" y="303" width="12" height="9" rx="2" fill="#48484a" />
-                <g class="rotor rotor--b" transform="translate(70 301)">
-                  <ellipse rx="29" ry="3" fill="rgba(255,255,255,.14)" />
-                  <rect class="rotor__blade" x="-29" y="-1.2" width="58" height="2.4" rx="1.2" fill="rgba(210,210,215,.75)" />
-                </g>
-                <g class="rotor" transform="translate(250 301)">
-                  <ellipse rx="29" ry="3" fill="rgba(255,255,255,.14)" />
-                  <rect class="rotor__blade" x="-29" y="-1.2" width="58" height="2.4" rx="1.2" fill="rgba(210,210,215,.75)" />
-                </g>
-
-                <!-- Priekinė variklių pora ir rėmas -->
-                <path d="M52 322 42 346M268 322 278 346" stroke="#2c2c2e" stroke-width="5" stroke-linecap="round" />
-                <rect x="24" y="316" width="272" height="8" rx="4" fill="#2c2c2e" />
-                <rect x="29" y="306" width="14" height="11" rx="2" fill="#1c1c1e" />
-                <rect x="277" y="306" width="14" height="11" rx="2" fill="#1c1c1e" />
-                <g class="rotor" transform="translate(36 303)">
-                  <ellipse rx="32" ry="3.6" fill="rgba(255,255,255,.18)" />
-                  <rect class="rotor__blade" x="-32" y="-1.4" width="64" height="2.8" rx="1.4" fill="#d2d2d7" />
-                </g>
-                <g class="rotor rotor--b" transform="translate(284 303)">
-                  <ellipse rx="32" ry="3.6" fill="rgba(255,255,255,.18)" />
-                  <rect class="rotor__blade" x="-32" y="-1.4" width="64" height="2.8" rx="1.4" fill="#d2d2d7" />
-                </g>
-
-                <!-- Skrydžio kompiuteris ir GNSS -->
-                <rect x="126" y="306" width="68" height="22" rx="6" fill="#1c1c1e" stroke="#3a3a3c" />
-                <circle class="fc-led" cx="140" cy="317" r="3" fill="#30d158" />
-                <ellipse cx="176" cy="317" rx="10" ry="4" fill="#636366" />
+                <!-- Aliuminio rėmas, skrydžio kompiuteris ir GNSS imtuvas -->
+                <path d="M100 302 90 322M220 302 230 322" stroke="#8e8e93" stroke-width="4" stroke-linecap="round" />
+                <rect x="80" y="295" width="160" height="7" rx="3.5" fill="#aeaeb2" />
+                <rect x="80" y="295" width="160" height="2.5" rx="1.25" fill="#f2f2f7" opacity=".7" />
+                <rect x="136" y="301" width="48" height="14" rx="4" fill="#1c1c1e" stroke="#3a3a3c" />
+                <circle class="fc-led" cx="146" cy="308" r="2.5" fill="#30d158" />
+                <ellipse cx="170" cy="308" rx="7" ry="3" fill="#636366" />
               </g>
             </svg>
             <div class="xmas__sky" data-sky="xmas" aria-hidden="true"></div>
@@ -345,34 +342,105 @@
             <div class="highlight">
               <span class="pill"><svg class="icon" aria-hidden="true"><use href="#i-tree" /></svg>Mūsų studentų darbas</span>
               <h3>Prie eglės kūrimo prisidėjo ir FPV dirbtuvių studentai</h3>
-              <p>Eglę kūrė mišri komanda: Aeronautikos laboratorijos absolventai ir darbuotojai kartu su lenktyninių dronų dirbtuvių dalyviais. Dirbtuvėse įgytos žinios virto tikru, į dangų pakilusiu projektu.</p>
+              <p>Prie šventinės iniciatyvos prisidėjo tiek absolventai ir dabartiniai laboratorijos darbuotojai, tiek studentai, dalyvaujantys lenktyninių dronų dirbtuvėse:</p>
+              <ul class="team" aria-label="Eglės kūrėjų komanda">
+                <li>Aleksandr Lapušinskij</li>
+                <li>Laurynas Arštikys</li>
+                <li>Dominykas Petrulaitis</li>
+                <li>Kasparas Vincentas Mičiūnas</li>
+                <li>Benediktas Ščiučka</li>
+                <li>Mantas Peleckas</li>
+                <li>Domantas Gramata</li>
+                <li>Justas Novikovas</li>
+                <li>Paulina Somaryuk</li>
+                <li>Arnoldas Novikevičius</li>
+              </ul>
             </div>
-
-            <p class="xmas__body">Jaunieji VILNIUS TECH Antano Gustaičio aviacijos instituto (AGAI) Aeronautikos laboratorijos novatoriai kuria kūrybinius techninius projektus ir konstruoja bepiločius orlaivius. Eglę jie suprojektavo ir pagamino patys, nuo pradžios iki galo laboratorijoje: forma išgauta klijuojant putplasčio plokštes, kurios vėliau buvo nudažytos ir papuoštos kalėdiniais žaisliukais.</p>
 
             <ul class="spec-grid" aria-label="Eglės techninės savybės">
               <li><strong>4</strong><span>varikliai</span></li>
               <li><strong>FC</strong><span>skrydžio kompiuteris</span></li>
-              <li><strong>GNSS</strong><span>palydovinės navigacijos imtuvas</span></li>
+              <li><strong>GNSS</strong><span>imtuvas</span></li>
               <li><strong>Auto</strong><span>automatinės misijos</span></li>
+              <li><strong>Al</strong><span>aliuminio rėmas</span></li>
+              <li><strong>Forma</strong><span>klijuotos putplasčio plokštės</span></li>
             </ul>
-
-            <div class="compare">
-              <div>
-                <h4>Pirmoji eglė</h4>
-                <p>Paprastesnė: be autopiloto, su vienu varikliu ir rankiniu būdu valdomais aerodinaminiais paviršiais.</p>
-              </div>
-              <div class="is-new">
-                <h4>Naujoji eglė</h4>
-                <p>Modernesnė: keturi varikliai, skrydžio kompiuteris ir GNSS, paprastesnis valdymas ir estetiškesnis dizainas.</p>
-              </div>
-            </div>
-
-            <div class="actions">
-              <a class="btn btn--glass" href="https://lietuva.lt/kultura/vilnius-tech-sventes-kviecia-sutikti-zaismingai-sveikinimus-skraidina-egle/" target="_blank" rel="noopener">Skaityti straipsnį <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
-              <a class="link-more" href="https://vilniustech.lt/about-university/news/news/vilnius-tech-invites-you-to-celebrate-the-holidays-playfully-greetings-delivered-by-a-flying-tree/73477?nid=376476" target="_blank" rel="noopener" hreflang="en">English</a>
-            </div>
           </div>
+        </div>
+
+        <article class="story" aria-label="Straipsnis apie skraidančią eglę">
+          <p>Nors žiemos šventės turi daugybę tradicijų ir papročių, kartais yra labai smagu į viską pažvelgti žaismingai bei išradingai. Būtent taip švenčių proga šiemet sveikina VILNIUS TECH, į dangų pakėlęs skraidančią Kalėdų eglę. Gravitacijos nepaisantis kalėdinis siurprizas, anot jos kūrėjų, Antano Gustaičio aviacijos instituto (AGAI) inovatorių, įkvepia kurti ir įrodo, kokia įdomi, linksma ir šventiška gali būti inžinerija.</p>
+          <p>Vargu, ar dažnai galima išvysti dangų skrodžiančią kalėdinę eglutę – dauguma šventėms renkasi žemiškesnius variantus. Vis tik, jaunieji inovatoriai iš VILNIUS TECH AGAI Aeronautikos laboratorijos lengvų ir paprastų sprendimų neieško – jie nuolat dirba su kūrybiškais techniniais projektais, vykdo įvairius prototipavimo užsakymus ir konstruoja bepiločius orlaivius.</p>
+          <p>Jie itin daug dėmesio skiria ir studijų kokybei – dirba su studentais ir jų baigiamaisiais darbais, tad nenuostabu, kad skraidančią eglę su keturiais varikliais, skrydžio kompiuteriu ir GNSS imtuvu, galinčią automatiškai vykdyti misijas, kūrė mišri komanda.</p>
+          <blockquote class="quote">
+            <p>„Mūsų komandą vienija ne tik profesinės kompetencijos, bet ir labai aiški, bendra aistra aviacijai, technologijoms ir kūrybai. Inovacijos ir kūrybiškumas – tarsi mūsų DNR dalis: į bet kokį projektą, net ir į sudėtingą inžinerinį uždavinį, stengiamės pažvelgti originaliai, o taip atsiranda naujų, netikėtų sprendimų, kurie praskaidrina ir mūsų universiteto bendruomenės gyvenimą.</p>
+            <p>Ši eglutė – taip pat kūrybinis projektas, kuris parodo, kaip technologijos gali susilieti su šventine nuotaika“</p>
+            <footer>VILNIUS TECH AGAI Aeronautikos laboratorijos kolektyvas</footer>
+          </blockquote>
+        </article>
+
+        <div class="generations">
+          <header class="generations__head">
+            <h3>Dvi eglės kartos</h3>
+            <p>Tiesa, tai – ne pirmoji inovatorių kurta dronu skraidinama eglė. Vis tik, pirmoji buvo paprastesnė – be autopiloto, su vienu varikliu ir rankiniu būdu valdomomis aerodinaminėmis plokštumomis.</p>
+          </header>
+          <div class="generations__grid">
+            <figure class="gen-card">
+              <div class="gen-card__frame" data-yt="wOCMXLcPuw0" data-yt-start="12" data-yt-fallback-thumb>
+                <img src="https://vilniustech.lt/wp-content/uploads/2025/12/A.Lapu_.inskij.su_.kolega.ir_.skraidan.ia_.eglute.VGTU_.nuotr_.jpg?x10184" alt="A. Lapušinskij su kolega ir pirmąja skraidančia egle" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                <a class="video-card__play" href="https://www.youtube.com/watch?v=wOCMXLcPuw0&amp;t=12s" target="_blank" rel="noopener" aria-label="Paleisti vaizdo įrašą: pirmoji skraidanti eglė"><span class="play-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" /></svg></span></a>
+              </div>
+              <figcaption>
+                <span class="gen-card__tag">1 versija</span>
+                <h4>Pirmoji eglė</h4>
+                <p>Be autopiloto, su vienu varikliu ir rankiniu būdu valdomomis aerodinaminėmis plokštumomis.</p>
+                <small>Nuotr. VILNIUS TECH</small>
+              </figcaption>
+            </figure>
+            <figure class="gen-card gen-card--vertical">
+              <div class="gen-card__frame" data-yt="JNUtQXDAyNw" data-yt-fallback-thumb>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmy7HRDUXcxaNnDT5kFU41vYVjZMKfmzTU7G2od3VFYbRIsXyS8eRGNvvj&amp;s=10" alt="Naujoji skraidanti eglė su keturiais varikliais" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                <a class="video-card__play" href="https://www.youtube.com/shorts/JNUtQXDAyNw" target="_blank" rel="noopener" aria-label="Paleisti vaizdo įrašą: naujoji skraidanti eglė"><span class="play-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" /></svg></span></a>
+              </div>
+              <figcaption>
+                <span class="gen-card__tag gen-card__tag--new">2 versija</span>
+                <h4>Naujoji eglė</h4>
+                <p>Keturi varikliai, skrydžio kompiuteris ir GNSS imtuvas.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <article class="story">
+          <blockquote class="quote">
+            <p>„Dabartinė eglutė – kur kas modernesnė, be to, jos valdymas yra paprastesnis, o dizainas – estetiškesnis“</p>
+            <footer>Aleksandr Lapušinskij, Aeronautikos laboratorijos vedėjas</footer>
+          </blockquote>
+          <p>Ją nuo pradžios iki galo komanda suprojektavo ir pagamino savo laboratorijoje: formą išgavo klijuodama putplasčio plokštes, kurias nudažė ir dekoravo kalėdiniais papuošimais, o droną sukonstravo iš aliuminio rėmo, prie kurio montavo elektronikos prietaisus ir variklius.</p>
+          <p>Vis dėlto, procese netrūko išbandymų, nes reikėjo suderinti kelis iš pirmo žvilgsnio prieštaringus dalykus – išlaikyti lengvą, bet pakankamai tvirtą konstrukciją, paslėpti propelerius ir kartu užtikrinti stabilų bei saugų skrydį.</p>
+          <blockquote class="quote">
+            <p>„Didžiausias iššūkis buvo atrasti balansą tarp estetikos ir fizikos dėsnių: tai, kas gražiai atrodo ant žemės, nebūtinai gerai skrenda ore, todėl teko ieškoti kompromisų, koreguoti formas, mažinti svorį ir pergalvoti tvirtinimo sprendimus.</p>
+            <p>Viską reikėjo atlikti per ribotą laiką, tačiau būtent tai pavertė šį projektą linksmu kūrybiniu iššūkiu. Kai kurie sprendimai gimė spontaniškai – bandant, stebint rezultatą realiomis sąlygomis ir pasikliaujant patirtimi. Smagiausia buvo kūrybiškai konstruoti iš to, ką turėjome laboratorijoje, ir matyti, kaip gimsta eglutė“</p>
+            <footer>Eglutės kūrėjai</footer>
+          </blockquote>
+          <p>Anot A. Lapušinskij, tokie projektai visada primena, kad inžinerija apima ne tik skaičiavimus ir brėžinius, bet ir intuiciją, eksperimentavimą bei kūrybinę laisvę, ir parodo, kad technologijos gali būti žaismingos bei sukurti šventinę nuotaiką.</p>
+          <blockquote class="quote">
+            <p>„Būtent tai ir simbolizuoja mūsų kurta eglutė – net ir sudėtingus uždavinius galima spręsti su vaikišku smalsumu, o inžinerija gali būti ne tik tiksli ir racionali, bet ir kūrybiška bei džiuginanti. Kartu tai kviečia judėti į priekį, drąsiai eksperimentuoti ir prasmingai sujungti tradicijas su inovacijomis“</p>
+            <footer>Aleksandr Lapušinskij</footer>
+          </blockquote>
+        </article>
+
+        <div class="greeting">
+          <p class="greeting__intro">Aeronautikos laboratorijos komanda to linki visiems, kuriuos pasieks šis sveikinimas – daugiau žaismingumo ir kūrybiškumo, nepamirštant vaikystės smalsumo ir atviro, nuoširdaus žvilgsnio į pasaulį.</p>
+          <blockquote>
+            <p>„Tegul tas vidinis vaikas, gyvenantis kiekviename iš mūsų, drąsiai veda link naujų idėjų, atradimų ir kūrybos, o inžinerinis smalsumas skatina klausti, kurti ir nebijoti bandyti. Tegul technologijos ir mokslas visuomet eina greta žmogiškumo, bendrystės ir šilumos. Linkime visiems ramių, šviesių švenčių, įkvėpimo artėjantiems metams ir džiaugsmo tiek darbuose, tiek kasdienėse akimirkose“</p>
+            <footer>Eglutės kūrėjai</footer>
+          </blockquote>
+        </div>
+
+        <div class="actions actions--center">
+          <a class="btn btn--glass" href="https://lietuva.lt/kultura/vilnius-tech-sventes-kviecia-sutikti-zaismingai-sveikinimus-skraidina-egle/" target="_blank" rel="noopener">Skaityti straipsnį <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+          <a class="link-more" href="https://vilniustech.lt/about-university/news/news/vilnius-tech-invites-you-to-celebrate-the-holidays-playfully-greetings-delivered-by-a-flying-tree/73477?nid=376476" target="_blank" rel="noopener" hreflang="en">English</a>
         </div>
       </div>
     </section>
@@ -382,7 +450,7 @@
       <div class="container">
         <header class="section__head">
           <p class="eyebrow">Ženkliukas ir padėkos</p>
-          <h2 class="section__title" id="padekos-title">Įvertinimas ir komanda</h2>
+          <h2 class="section__title" id="padekos-title">Įvertinimas ir padėkos</h2>
         </header>
         <div class="duo">
           <article class="card badge-card">
@@ -394,12 +462,12 @@
             <a class="link-more" href="https://www.badgecraft.eu/lt/projects/15968/classes/86759?project=15968" target="_blank" rel="noopener">Peržiūrėti ženkliuką Badgecraft</a>
           </article>
           <article class="card">
-            <h3>Ačiū</h3>
-            <p>Padėka rėmėjui <a href="https://1dronas.lt" target="_blank" rel="noopener">1dronas.lt</a> už norą skatinti studentus ir pasitikėjimą Aeronautikos laboratorija organizuojant šias dirbtuves.</p>
-            <p>Taip pat dėkojame VILNIUS TECH FMF studentei <strong>Darijai Aurelijai Jurevič</strong> ir AGAI studentams <strong>Dominykui Širvinskui</strong> ir <strong>Laurynai Būkytei</strong> už pagalbą kuriant reklaminę medžiagą bei renginio organizavimą.</p>
+            <h3>Ačiū už 2025-uosius!</h3>
+            <p>Padėka 2025 m. dirbtuvių rėmėjui <a href="https://1dronas.lt" target="_blank" rel="noopener">1dronas.lt</a> už norą skatinti studentus ir pasitikėjimą Aeronautikos laboratorija organizuojant šias dirbtuves.</p>
+            <p>Taip pat dėkojame VILNIUS TECH FMF studentei <strong>Darijai Aurelijai Jurevič</strong> ir AGAI studentams <strong>Dominykui Širvinskui</strong> ir <strong>Laurynai Būkytei</strong> už pagalbą kuriant 2025 m. dirbtuvių reklaminę medžiagą bei renginio organizavimą.</p>
             <div class="partners">
-              <a href="https://vilniustech.lt/antano-gustaicio-aviacijos-institutas/padaliniai/aeronautikos-laboratorija/apie-laboratorija/319974" target="_blank" rel="noopener"><img src="assets/vilniustech-logo.png" alt="VILNIUS TECH Aeronautikos laboratorija" width="2967" height="1113" loading="lazy" /></a>
               <a href="https://1dronas.lt" target="_blank" rel="noopener"><img src="assets/sponsor-logo.png" alt="1dronas.lt" width="1600" height="428" loading="lazy" /></a>
+              <span>2025 m. dirbtuvių rėmėjas</span>
             </div>
           </article>
         </div>
@@ -418,7 +486,7 @@
         <div>
           <h2>Naudingos nuorodos</h2>
           <ul>
-            <li><a href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener">Registracija</a></li>
+            <li><a href="https://forms.gle/cSC9bcZp1CQem8Aj7" target="_blank" rel="noopener" data-register-link>Registracija</a></li>
             <li><a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" rel="noopener">Rekomenduojamos dalys</a></li>
             <li><a href="https://docs.google.com/spreadsheets/d/1vTfrk1ayqATtNd2wUIYNdgGudGpcp4olw_YW5_T0jdo/edit?usp=sharing" target="_blank" rel="noopener">Programa</a></li>
           </ul>
@@ -426,6 +494,7 @@
         <div>
           <h2>Puslapyje</h2>
           <ul>
+            <li><a href="#trasa">Lenktynių trasa</a></li>
             <li><a href="#video">Vaizdo įrašai</a></li>
             <li><a href="#nuotraukos">Nuotraukos</a></li>
             <li><a href="#ikelk">Įkelk savo medžiagą</a></li>
