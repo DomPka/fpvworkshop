@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Įkelk nuotraukas — Lenktyninių dronų dirbtuvės 2026</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/site.css" />
+  <style>
+    body { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--bg-2); }
+    .redirect { width: min(100%, 460px); text-align: center; }
+    .redirect img { width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 18px; }
+    .redirect h1 { margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+    .redirect p { margin: 12px 0 0; color: var(--label-2); }
+    .redirect .actions { flex-direction: column; margin-top: 24px; }
+  </style>
+  <!-- QR kodas veda čia; tikroji įkėlimo nuoroda nustatoma assets/media.js (uploadUrl). -->
+  <script src="assets/media.js"></script>
+</head>
+<body>
+  <main class="card redirect">
+    <img src="assets/favicon.svg" alt="" />
+    <h1>Įkelk savo nuotraukas ir vaizdo įrašus</h1>
+    <p id="status">Nukreipiame į įkėlimo puslapį…</p>
+    <div class="actions">
+      <a class="btn btn--filled" id="primary" href="index.html#ikelk">Įkelti</a>
+      <a class="btn btn--gray" href="index.html">Grįžti į dirbtuvių puslapį</a>
+    </div>
+  </main>
+  <script>
+    (() => {
+      const media = window.FPV_MEDIA || {};
+      const status = document.getElementById('status');
+      const primary = document.getElementById('primary');
+
+      if (media.uploadUrl) {
+        primary.href = media.uploadUrl;
+        primary.textContent = 'Atidaryti įkėlimo puslapį';
+        window.location.replace(media.uploadUrl);
+        return;
+      }
+
+      const email = media.contactEmail || 'dominykas.petrulaitis@vilniustech.lt';
+      status.textContent = 'Įkėlimo aplankas dar ruošiamas. Kol kas nuotraukas ir vaizdo įrašus atsiųsk el. paštu ' + email + '.';
+      primary.textContent = 'Siųsti el. paštu';
+      primary.href = 'mailto:' + email +
+        '?subject=' + encodeURIComponent('FPV dirbtuvių nuotraukos ir vaizdo įrašai') +
+        '&body=' + encodeURIComponent('Sveiki,\n\nsiunčiu savo nuotraukas / vaizdo įrašus iš lenktyninių dronų dirbtuvių.\n\nVardas, pavardė:\n');
+    })();
+  </script>
+</body>
+</html>
